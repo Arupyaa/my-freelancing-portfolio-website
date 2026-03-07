@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abdelrahman Keshk — Front-End Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
+    rel="stylesheet" />
   <style>
     :root {
-      --bg:         #ffffbf;
-      --rose:       #7a6800;
+      --bg: #ffffbf;
+      --rose: #7a6800;
       --rose-light: #c8b400;
-      --rose-pale:  #fffde0;
-      --rose-glow:  rgba(180,155,0,.12);
-      --ink:        #1a1600;
-      --ink-mid:    #3d3500;
-      --ink-soft:   #7a6e2a;
-      --border:     #e0d96a;
+      --rose-pale: #fffde0;
+      --rose-glow: rgba(180, 155, 0, .12);
+      --ink: #1a1600;
+      --ink-mid: #3d3500;
+      --ink-soft: #7a6e2a;
+      --border: #e0d96a;
       --card-hover: #fffff0;
-      --tag-bg:     #fffde0;
-      --tag-text:   #5a4e00;
+      --tag-bg: #fffde0;
+      --tag-text: #5a4e00;
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'DM Sans', sans-serif;
       background: var(--bg);
@@ -31,10 +44,24 @@
       line-height: 1.65;
       overflow-x: hidden;
     }
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--rose-light); border-radius: 99px; }
-    a { color: inherit; text-decoration: none; }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--rose-light);
+      border-radius: 99px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
 
     .layout {
@@ -56,15 +83,18 @@
     }
 
     .avatar {
-      width: 250px; height: 250px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
       overflow: hidden;
       margin-bottom: 1.6rem;
       border: 2px solid var(--border);
       background: var(--rose-pale);
     }
+
     .avatar img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: 50% 35%;
     }
@@ -76,12 +106,14 @@
       color: var(--ink);
       margin-bottom: .4rem;
     }
+
     .panel-role {
       font-size: 1.24rem;
       font-weight: 600;
       color: var(--rose);
       margin-bottom: 1rem;
     }
+
     .panel-bio {
       font-size: 1.13rem;
       color: var(--ink-soft);
@@ -95,6 +127,7 @@
       flex-direction: column;
       gap: .15rem;
     }
+
     .panel-nav a {
       display: flex;
       align-items: center;
@@ -107,17 +140,21 @@
       color: var(--ink-soft);
       transition: color .2s;
     }
+
     .nav-line {
       display: block;
-      width: 26px; height: 1px;
+      width: 26px;
+      height: 1px;
       background: var(--ink-soft);
       transition: width .25s, background .25s;
       flex-shrink: 0;
     }
+
     .panel-nav a:hover,
     .panel-nav a.active {
       color: var(--ink);
     }
+
     .panel-nav a:hover .nav-line,
     .panel-nav a.active .nav-line {
       width: 50px;
@@ -129,14 +166,24 @@
       gap: 1rem;
       align-items: center;
     }
+
     .social-link {
       color: var(--ink-soft);
       transition: color .2s, transform .2s;
       display: flex;
       align-items: center;
     }
-    .social-link:hover { color: var(--rose); transform: translateY(-2px); }
-    .social-link svg { width: 25px; height: 25px; fill: currentColor; }
+
+    .social-link:hover {
+      color: var(--rose);
+      transform: translateY(-2px);
+    }
+
+    .social-link svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+    }
 
 
     .right-content {
@@ -159,8 +206,11 @@
       align-items: center;
       gap: .75rem;
     }
+
     .section-heading::after {
-      content: ''; flex: 1; height: 1px;
+      content: '';
+      flex: 1;
+      height: 1px;
       background: var(--border);
     }
 
@@ -171,16 +221,24 @@
       margin-bottom: 1rem;
       line-height: 1.85;
     }
-    .about-text p:last-child { margin-bottom: 0; }
+
+    .about-text p:last-child {
+      margin-bottom: 0;
+    }
+
     .about-text a {
       color: var(--rose);
       border-bottom: 1px solid var(--rose-light);
       transition: border-color .2s;
     }
-    .about-text a:hover { border-color: var(--rose); }
+
+    .about-text a:hover {
+      border-color: var(--rose);
+    }
 
 
-    .exp-card, .edu-card {
+    .exp-card,
+    .edu-card {
       display: grid;
       grid-template-columns: 96px 1fr;
       gap: .8rem 1rem;
@@ -189,12 +247,15 @@
       margin-bottom: .4rem;
       transition: background .2s, box-shadow .2s;
     }
-    .exp-card:hover, .edu-card:hover {
+
+    .exp-card:hover,
+    .edu-card:hover {
       background: var(--card-hover);
       box-shadow: 0 4px 28px var(--rose-glow);
     }
 
-    .exp-date, .edu-date {
+    .exp-date,
+    .edu-date {
       font-size: .94rem;
       font-weight: 600;
       letter-spacing: .04em;
@@ -204,7 +265,8 @@
       line-height: 1.5;
     }
 
-    .exp-title, .edu-degree {
+    .exp-title,
+    .edu-degree {
       font-size: 1.24rem;
       font-weight: 700;
       color: var(--ink);
@@ -213,6 +275,7 @@
       align-items: center;
       gap: .35rem;
     }
+
     .arrow {
       font-size: 1.01rem;
       color: var(--rose);
@@ -221,25 +284,40 @@
       transition: opacity .2s, transform .2s;
       display: inline-block;
     }
+
     .exp-card:hover .arrow,
     .edu-card:hover .arrow,
-    .project-card:hover .arrow { opacity: 1; transform: translateX(2px); }
+    .project-card:hover .arrow {
+      opacity: 1;
+      transform: translateX(2px);
+    }
 
-    .exp-company, .edu-school {
+    .exp-company,
+    .edu-school {
       font-size: 1.08rem;
       color: var(--rose);
       font-weight: 500;
       margin-bottom: .55rem;
     }
-    .exp-desc, .edu-note {
+
+    .exp-desc,
+    .edu-note {
       font-size: 1.13rem;
       color: var(--ink-soft);
       line-height: 1.75;
       margin-bottom: .75rem;
     }
-    .edu-note { margin-bottom: 0; }
 
-    .tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+    .edu-note {
+      margin-bottom: 0;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .35rem;
+    }
+
     .tag {
       background: var(--tag-bg);
       color: var(--tag-text);
@@ -259,10 +337,12 @@
       margin-bottom: .4rem;
       transition: background .2s, box-shadow .2s;
     }
+
     .project-card:hover {
       background: var(--card-hover);
       box-shadow: 0 4px 28px var(--rose-glow);
     }
+
     .project-thumb {
       border-radius: 7px;
       overflow: hidden;
@@ -271,12 +351,15 @@
       background: var(--rose-pale);
       flex-shrink: 0;
     }
+
     .project-thumb img {
-      width: 100%; height: 100%;
+      width: 100%;
+      height: 100%;
       object-fit: cover;
       object-position: center;
       display: block;
     }
+
     .project-title {
       font-size: 1.24rem;
       font-weight: 700;
@@ -286,6 +369,7 @@
       align-items: center;
       gap: .35rem;
     }
+
     .project-desc {
       font-size: 1.12rem;
       color: var(--ink-soft);
@@ -301,6 +385,7 @@
       max-width: 520px;
       margin-bottom: 2rem;
     }
+
     .contact-links {
       display: flex;
       flex-direction: column;
@@ -308,6 +393,7 @@
       margin-bottom: 2.5rem;
       max-width: 420px;
     }
+
     .contact-item {
       display: flex;
       align-items: center;
@@ -318,241 +404,395 @@
       border-radius: 10px;
       transition: border-color .2s, box-shadow .2s, transform .2s;
     }
+
     .contact-item:hover {
       border-color: var(--rose-light);
       box-shadow: 0 4px 18px var(--rose-glow);
       transform: translateX(4px);
     }
+
     .contact-icon {
-      width: 32px; height: 32px;
+      width: 32px;
+      height: 32px;
       background: var(--rose-pale);
       border-radius: 7px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.17rem; flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.17rem;
+      flex-shrink: 0;
     }
-    .contact-info { display: flex; flex-direction: column; }
-    .contact-label {
-      font-size: .88rem; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft);
-    }
-    .contact-value { font-size: 1.14rem; font-weight: 500; color: var(--ink); }
 
-    .contact-form { display: flex; flex-direction: column; gap: .85rem; max-width: 460px; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: .85rem; }
-    .form-group { display: flex; flex-direction: column; gap: .3rem; }
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-label {
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+    }
+
+    .contact-value {
+      font-size: 1.14rem;
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+      max-width: 460px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .85rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: .3rem;
+    }
+
     .form-label {
-      font-size: .91rem; font-weight: 700;
-      letter-spacing: .08em; text-transform: uppercase; color: var(--ink-mid);
+      font-size: .91rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-mid);
     }
-    .form-input, .form-textarea {
-      background: #fff; border: 1.5px solid var(--border);
-      border-radius: 8px; padding: .65rem .85rem;
-      font-family: 'DM Sans', sans-serif; font-size: 1.14rem;
-      color: var(--ink); outline: none; transition: border-color .2s; resize: vertical;
+
+    .form-input,
+    .form-textarea {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      padding: .65rem .85rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.14rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color .2s;
+      resize: vertical;
     }
-    .form-input:focus, .form-textarea:focus { border-color: var(--rose); }
-    .form-textarea { min-height: 105px; }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: var(--rose);
+    }
+
+    .form-textarea {
+      min-height: 105px;
+    }
+
     .form-btn {
       align-self: flex-start;
-      background: var(--rose); color: #fff; border: none;
-      border-radius: 99px; padding: .7rem 1.7rem;
-      font-family: 'DM Sans', sans-serif; font-size: 1.14rem; font-weight: 600;
-      cursor: pointer; transition: background .2s, transform .2s, box-shadow .2s;
+      background: var(--rose);
+      color: #fff;
+      border: none;
+      border-radius: 99px;
+      padding: .7rem 1.7rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.14rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background .2s, transform .2s, box-shadow .2s;
     }
+
     .form-btn:hover {
       background: #5a4e00;
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(90,78,0,.25);
+      box-shadow: 0 8px 20px rgba(90, 78, 0, .25);
     }
-    #form-msg { font-size: 1.07rem; color: var(--rose); display: none; margin-top: .2rem; }
+
+    #form-msg {
+      font-size: 1.07rem;
+      color: var(--rose);
+      display: none;
+      margin-top: .2rem;
+    }
 
     .right-footer {
-      margin-top: 4rem; padding-top: 2rem;
+      margin-top: 4rem;
+      padding-top: 2rem;
       border-top: 1px solid var(--border);
-      font-size: 1rem; color: var(--ink-soft); line-height: 1.7;
+      font-size: 1rem;
+      color: var(--ink-soft);
+      line-height: 1.7;
     }
-    .right-footer span { color: var(--rose); }
 
- 
+    .right-footer span {
+      color: var(--rose);
+    }
+
+
     @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(18px); }
-      to   { opacity: 1; transform: none; }
-    }
-    .left-panel  { animation: fadeUp .7s ease both; }
-    .right-content { animation: fadeUp .7s .12s ease both; }
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
 
- 
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    .left-panel {
+      animation: fadeUp .7s ease both;
+    }
+
+    .right-content {
+      animation: fadeUp .7s .12s ease both;
+    }
+
+
     @media (max-width: 820px) {
-      .layout { grid-template-columns: 1fr; }
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
       .left-panel {
-        position: relative; height: auto;
+        position: relative;
+        height: auto;
         padding: 3rem 1.5rem 2rem;
       }
-      .panel-nav { margin-top: 1.8rem; flex-direction: row; flex-wrap: wrap; gap: .4rem 1.2rem; }
-      .nav-line { display: none; }
-      .right-content { padding: 2rem 1.5rem 5rem; }
-      .exp-card, .edu-card { grid-template-columns: 1fr; gap: .3rem; }
-      .exp-date, .edu-date { padding-top: 0; }
-      .project-card { grid-template-columns: 1fr; }
-      .project-thumb { height: 170px; }
-      .form-row { grid-template-columns: 1fr; }
+
+      .panel-nav {
+        margin-top: 1.8rem;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: .4rem 1.2rem;
+      }
+
+      .nav-line {
+        display: none;
+      }
+
+      .right-content {
+        padding: 2rem 1.5rem 5rem;
+      }
+
+      .exp-card,
+      .edu-card {
+        grid-template-columns: 1fr;
+        gap: .3rem;
+      }
+
+      .exp-date,
+      .edu-date {
+        padding-top: 0;
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-thumb {
+        height: 170px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
-<div class="layout">
+  <div class="layout">
 
 
-  <aside class="left-panel">
-    <div>
-      <div class="avatar">
-        <img src="pp.png" alt="profile pic" />
-      </div>
-      <h1 class="panel-name">Abdelrahman<br>Keshk</h1>
-      <p class="panel-role">Front-End Developer</p>
-      <p class="panel-bio">I turn clients' dream website ideas into a reality.</p>
-
-      <nav class="panel-nav">
-        <a href="#about" class="active"><span class="nav-line"></span>About</a>
-        <a href="#education"><span class="nav-line"></span>Education</a>
-        <a href="#experience"><span class="nav-line"></span>Experience</a>
-        <a href="#projects"><span class="nav-line"></span>Projects</a>
-        <a href="#contact"><span class="nav-line"></span>Contact</a>
-      </nav>
-    </div>
-
-    <div class="panel-socials">
-      <a href="https://github.com/Arupyaa" target="_blank" rel="noopener" class="social-link" title="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      </a>
-      <a href="https://www.linkedin.com/in/abdelrahman-m-keshk" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-      </a>
-      <a href="mailto:amkeshk98@gmail.com" class="social-link" title="Email">
-        <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.09l9.615-6.27h.749A1.636 1.636 0 0124 5.457z"/></svg>
-      </a>
-    </div>
-  </aside>
-
-  
-  <main class="right-content">
-
-
-    <section id="about" class="section">
-      <div class="section-heading">About</div>
-      <div class="about-text">
-        <p>I'm a front-end developer freshly entering the market with a genuine passion for building functional and responsive web solutions that fit every need. My background in Electrical &amp; Communication Engineering gave me a systematic, analytical way of thinking — discovering web development turned that into a creative outlet.</p>
-        <p>I write clean, maintainable JavaScript, craft responsive interfaces with React and Tailwind CSS, and enjoy the challenge of integrating third-party APIs to turn raw data into meaningful user experiences. I care equally about code quality under the hood and the experience it produces on screen.</p>
-        <p>I am currently training in the Certified Professional React Developer program at the <a href="#experience">Digilians Initiative</a> under joint MCIT &amp; Military Academy supervision. The program focuses on building industry-grade web applications, working in team environments while receiving continuous mentorship from experienced instructors to prepare for professional front-end development roles.</p>
-      </div>
-    </section>
-
-
-    <section id="education" class="section">
-      <div class="section-heading">Education</div>
-
-      <div class="edu-card">
-        <div class="edu-date">2017 — 2021</div>
-        <div>
-          <div class="edu-degree">B.S. Electrical &amp; Communication Engineering <span class="arrow">↗</span></div>
-          <div class="edu-school">Alexandria University · Alexandria, Egypt</div>
-          <div class="edu-note">A rigorous engineering degree that built strong analytical and problem-solving foundations — skills that transfer directly into writing reliable, well-structured software.</div>
+    <aside class="left-panel">
+      <div>
+        <div class="avatar">
+          <img src="pp.png" alt="profile pic" />
         </div>
+        <h1 class="panel-name">Abdelrahman<br>Keshk</h1>
+        <p class="panel-role">Front-End Developer</p>
+        <p class="panel-bio">I turn clients' dream website ideas into a reality.</p>
+
+        <nav class="panel-nav">
+          <a href="#about" class="active"><span class="nav-line"></span>About</a>
+          <a href="#education"><span class="nav-line"></span>Education</a>
+          <a href="#experience"><span class="nav-line"></span>Experience</a>
+          <a href="#projects"><span class="nav-line"></span>Projects</a>
+          <a href="#contact"><span class="nav-line"></span>Contact</a>
+          <a href="https://drive.google.com/file/d/17DMWxUBcXc5ZnDst1fcAZcM9G0Y2lHSq/view?usp=sharing" target="_blank"
+            rel="noopener"><span class="nav-line"></span>Resume</a>
+        </nav>
       </div>
-    </section>
 
-
-    <section id="experience" class="section">
-      <div class="section-heading">Experience</div>
-
-      <div class="exp-card">
-        <div class="exp-date">Feb 2026 —<br>Jun 2026</div>
-        <div>
-          <div class="exp-title">Professional React Developer Trainee <span class="arrow">↗</span></div>
-          <div class="exp-company">Digilians Initiative · Cairo, Egypt</div>
-          <div class="exp-desc">A certified program supervised jointly by MCIT and the Military Academy, through which I am strengthening my front-end development skills to an industry level while building real-world web applications using modern technologies. The program emphasizes collaborative teamwork, continuous feedback from experienced instructors, and best practices for developing production-ready applications, preparing me to work effectively as both a freelancer and a full-time developer.</div>
-          <div class="tags">
-            <span class="tag">React.js</span>
-            <span class="tag">Node.js</span>
-            <span class="tag">Express.js</span>
-            <span class="tag">MongoDB</span>
-            <span class="tag">Next.js</span>
-            <span class="tag">Tailwind CSS</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">Git</span>
-            <span class="tag">Docker</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="projects" class="section">
-      <div class="section-heading">Projects</div>
-
-      <div class="project-card">
-        <div class="project-thumb">
-          <img src="project_home_page.png" alt="News Center home page" onerror="this.parentElement.style.background='var(--rose-pale)'" />
-        </div>
-        <div>
-          <div class="project-title">News Website <span class="arrow">↗</span></div>
-          <div class="project-desc">A news aggregation platform pulling real-time headlines from multiple sources, with a live dashboard showing current weather, currency exchange rates, and live football scores. Includes dedicated pages for match results, standings, and league stats.</div>
-          <div class="tags">
-            <span class="tag">HTML5</span>
-            <span class="tag">CSS3</span>
-            <span class="tag">JavaScript</span>
-            <span class="tag">Bootstrap</span>
-            <span class="tag">News API</span>
-            <span class="tag">Sports API</span>
-            <span class="tag">Weather API</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="contact" class="section">
-      <div class="section-heading">Contact</div>
-      <p class="contact-text">I'm actively looking for front-end developer roles — junior positions, internships, or freelance projects. If you have an opportunity or just want to say hello, my inbox is always open, and I'm quick to reply</p>
-
-      <div class="contact-links">
-        <a href="tel:+201012924699" class="contact-item">
-          <div class="contact-icon">📞</div>
-          <div class="contact-info">
-            <span class="contact-label">Phone</span>
-            <span class="contact-value">+20 101 292 4699</span>
-          </div>
+      <div class="panel-socials">
+        <a href="https://github.com/Arupyaa" target="_blank" rel="noopener" class="social-link" title="GitHub">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
         </a>
-        <a href="mailto:amkeshk98@gmail.com" class="contact-item">
-          <div class="contact-icon">✉️</div>
-          <div class="contact-info">
-            <span class="contact-label">Email</span>
-            <span class="contact-value"><span class="__cf_email__" data-cfemail="b6cfd9c3c498d3dbd7dfdaf6d1dbd7dfda98d5d9db">amkeshk98@gmail.com</span></span>
-          </div>
+        <a href="https://www.linkedin.com/in/abdelrahman-m-keshk" target="_blank" rel="noopener" class="social-link"
+          title="LinkedIn">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+          </svg>
         </a>
-        <a href="https://www.linkedin.com/in/abdelrahman-m-keshk" target="_blank" rel="noopener" class="contact-item">
-          <div class="contact-icon">💼</div>
-          <div class="contact-info">
-            <span class="contact-label">LinkedIn</span>
-            <span class="contact-value">linkedin.com/in/abdelrahman-m-keshk</span>
-          </div>
-        </a>
-        <a href="https://github.com/Arupyaa" target="_blank" rel="noopener" class="contact-item">
-          <div class="contact-icon">🐙</div>
-          <div class="contact-info">
-            <span class="contact-label">GitHub</span>
-            <span class="contact-value">github.com/Arupyaa</span>
-          </div>
+        <a href="mailto:amkeshk98@gmail.com" class="social-link" title="Email">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.732-1.636 1.636-1.636h.749L12 10.09l9.615-6.27h.749A1.636 1.636 0 0124 5.457z" />
+          </svg>
         </a>
       </div>
+    </aside>
 
-      
-    </section>
 
-    
+    <main class="right-content">
 
-  </main>
-</div>
+
+      <section id="about" class="section">
+        <div class="section-heading">About</div>
+        <div class="about-text">
+          <p>I'm a front-end developer freshly entering the market with a genuine passion for building functional and
+            responsive web solutions that fit every need. My background in Electrical &amp; Communication Engineering
+            gave me a systematic, analytical way of thinking — discovering web development turned that into a creative
+            outlet.</p>
+          <p>I write clean, maintainable JavaScript, craft responsive interfaces with React and Tailwind CSS, and enjoy
+            the challenge of integrating third-party APIs to turn raw data into meaningful user experiences. I care
+            equally about code quality under the hood and the experience it produces on screen.</p>
+          <p>I am currently training in the Certified Professional React Developer program at the <a
+              href="#experience">Digilians Initiative</a> under joint MCIT &amp; Military Academy supervision. The
+            program focuses on building industry-grade web applications, working in team environments while receiving
+            continuous mentorship from experienced instructors to prepare for professional front-end development roles.
+          </p>
+        </div>
+      </section>
+
+
+      <section id="education" class="section">
+        <div class="section-heading">Education</div>
+
+        <div class="edu-card">
+          <div class="edu-date">2017 — 2021</div>
+          <div>
+            <div class="edu-degree">B.S. Electrical &amp; Communication Engineering <span class="arrow">↗</span></div>
+            <div class="edu-school">Alexandria University · Alexandria, Egypt</div>
+            <div class="edu-note">A rigorous engineering degree that built strong analytical and problem-solving
+              foundations — skills that transfer directly into writing reliable, well-structured software.</div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="experience" class="section">
+        <div class="section-heading">Experience</div>
+
+        <div class="exp-card">
+          <div class="exp-date">Feb 2026 —<br>Jun 2026</div>
+          <div>
+            <div class="exp-title">Professional React Developer Trainee <span class="arrow">↗</span></div>
+            <div class="exp-company">Digilians Initiative · Cairo, Egypt</div>
+            <div class="exp-desc">A certified program supervised jointly by MCIT and the Military Academy, through which
+              I am strengthening my front-end development skills to an industry level while building real-world web
+              applications using modern technologies. The program emphasizes collaborative teamwork, continuous feedback
+              from experienced instructors, and best practices for developing production-ready applications, preparing
+              me to work effectively as both a freelancer and a full-time developer.</div>
+            <div class="tags">
+              <span class="tag">React.js</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">Express.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Next.js</span>
+              <span class="tag">Tailwind CSS</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">Git</span>
+              <span class="tag">Docker</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="projects" class="section">
+        <div class="section-heading">Projects</div>
+
+        <div class="project-card">
+          <div class="project-thumb">
+            <img src="project_home_page.png" alt="News Center home page"
+              onerror="this.parentElement.style.background='var(--rose-pale)'" />
+          </div>
+          <div>
+            <div class="project-title">News Website <span class="arrow">↗</span></div>
+            <div class="project-desc">A news aggregation platform pulling real-time headlines from multiple sources,
+              with a live dashboard showing current weather, currency exchange rates, and live football scores. Includes
+              dedicated pages for match results, standings, and league stats.</div>
+            <div class="tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Bootstrap</span>
+              <span class="tag">News API</span>
+              <span class="tag">Sports API</span>
+              <span class="tag">Weather API</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <section id="contact" class="section">
+        <div class="section-heading">Contact</div>
+        <p class="contact-text">I'm actively looking for front-end developer roles — junior positions, internships, or
+          freelance projects. If you have an opportunity or just want to say hello, my inbox is always open, and I'm
+          quick to reply</p>
+
+        <div class="contact-links">
+          <a href="tel:+201012924699" class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">+20 101 292 4699</span>
+            </div>
+          </a>
+          <a href="mailto:amkeshk98@gmail.com" class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info">
+              <span class="contact-label">Email</span>
+              <span class="contact-value"><span class="__cf_email__"
+                  data-cfemail="b6cfd9c3c498d3dbd7dfdaf6d1dbd7dfda98d5d9db">amkeshk98@gmail.com</span></span>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/abdelrahman-m-keshk" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div class="contact-info">
+              <span class="contact-label">LinkedIn</span>
+              <span class="contact-value">linkedin.com/in/abdelrahman-m-keshk</span>
+            </div>
+          </a>
+          <a href="https://github.com/Arupyaa" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon">🐙</div>
+            <div class="contact-info">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">github.com/Arupyaa</span>
+            </div>
+          </a>
+        </div>
+
+
+      </section>
+
+
+
+    </main>
+  </div>
 
 </body>
+
 </html>
