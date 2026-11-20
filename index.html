@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdelrahman Keshk — Front-End Developer</title>
+  <title>Abdelrahman Keshk — Fullstack Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap"
@@ -328,13 +328,29 @@
     }
 
 
+    .projects-carousel {
+      position: relative;
+    }
+
+    .projects-viewport {
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .projects-track {
+      display: flex;
+      transition: transform .45s ease;
+      will-change: transform;
+    }
+
     .project-card {
       display: flex;
       flex-direction: column;
       gap: 1rem;
       padding: 1.1rem;
       border-radius: 12px;
-      margin-bottom: .4rem;
+      flex: 0 0 100%;
+      min-width: 100%;
       transition: background .2s, box-shadow .2s;
     }
 
@@ -347,7 +363,8 @@
       border-radius: 7px;
       overflow: hidden;
       border: 1px solid var(--border);
-      width: 650px;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       background: var(--rose-pale);
       flex-shrink: 0;
     }
@@ -356,7 +373,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center;
+      object-position: center top;
       display: block;
     }
 
@@ -375,6 +392,62 @@
       color: var(--ink-soft);
       line-height: 1.75;
       margin-bottom: .7rem;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: .8rem;
+      padding: 0 .4rem;
+    }
+
+    .carousel-btn {
+      width: 38px;
+      height: 38px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--ink-mid);
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: background .2s, border-color .2s, color .2s, box-shadow .2s;
+    }
+
+    .carousel-btn:hover {
+      background: var(--rose);
+      border-color: var(--rose);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(90, 78, 0, .2);
+    }
+
+    .carousel-dots {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .carousel-dot {
+      width: 9px;
+      height: 9px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: var(--border);
+      cursor: pointer;
+      transition: width .25s, background .25s;
+    }
+
+    .carousel-dot.active {
+      width: 24px;
+      border-radius: 99px;
+      background: var(--rose);
     }
 
 
@@ -592,11 +665,26 @@
       }
 
       .project-card {
-        grid-template-columns: 1fr;
+        padding: .6rem;
       }
 
       .project-thumb {
-        height: 170px;
+        aspect-ratio: 4 / 3;
+      }
+
+      .project-desc {
+        font-size: 1.06rem;
+      }
+
+      .carousel-btn {
+        width: 34px;
+        height: 34px;
+        font-size: 1.05rem;
+      }
+
+      .carousel-controls {
+        margin-top: .6rem;
+        padding: 0;
       }
 
       .form-row {
@@ -616,7 +704,7 @@
           <img src="pp.png" alt="profile pic" />
         </div>
         <h1 class="panel-name">Abdelrahman<br>Keshk</h1>
-        <p class="panel-role">Front-End Developer</p>
+        <p class="panel-role">Fullstack Developer</p>
         <p class="panel-bio">I turn clients' dream website ideas into a reality.</p>
 
         <nav class="panel-nav">
@@ -625,7 +713,7 @@
           <a href="#experience"><span class="nav-line"></span>Experience</a>
           <a href="#projects"><span class="nav-line"></span>Projects</a>
           <a href="#contact"><span class="nav-line"></span>Contact</a>
-          <a href="https://drive.google.com/file/d/17DMWxUBcXc5ZnDst1fcAZcM9G0Y2lHSq/view?usp=sharing" target="_blank"
+          <a href="https://drive.google.com/file/d/1lCJmYJmwgAl9mHklikm5my4LSps5BSFL/view?usp=sharing" target="_blank"
             rel="noopener"><span class="nav-line"></span>Resume</a>
         </nav>
       </div>
@@ -660,17 +748,18 @@
       <section id="about" class="section">
         <div class="section-heading">About</div>
         <div class="about-text">
-          <p>I'm a front-end developer freshly entering the market with a genuine passion for building functional and
+          <p>I'm a fullstack developer with a genuine passion for building functional and
             responsive web solutions that fit every need. My background in Electrical &amp; Communication Engineering
             gave me a systematic, analytical way of thinking — discovering web development turned that into a creative
             outlet.</p>
-          <p>I write clean, maintainable JavaScript, craft responsive interfaces with React and Tailwind CSS, and enjoy
+          <p>I write clean, maintainable code ineact and JavaScript, craft responsive interfaces with Tailwind CSS and
+            bootstrap, and enjoy
             the challenge of integrating third-party APIs to turn raw data into meaningful user experiences. I care
             equally about code quality under the hood and the experience it produces on screen.</p>
-          <p>I am currently training in the Certified Professional React Developer program at the <a
+          <p>I completed my training in the Certified Professional React Developer program at the <a
               href="#experience">Digilians Initiative</a> under joint MCIT &amp; Military Academy supervision. The
-            program focuses on building industry-grade web applications, working in team environments while receiving
-            continuous mentorship from experienced instructors to prepare for professional front-end development roles.
+            program focused on building industry-grade web applications, working in team environments while receiving
+            continuous mentorship from experienced instructors to prepare for professional fullstack development roles.
           </p>
         </div>
       </section>
@@ -700,7 +789,7 @@
             <div class="exp-title">Professional React Developer Trainee <span class="arrow">↗</span></div>
             <div class="exp-company">Digilians Initiative · Cairo, Egypt</div>
             <div class="exp-desc">A certified program supervised jointly by MCIT and the Military Academy, through which
-              I am strengthening my front-end development skills to an industry level while building real-world web
+              I am strengthening my fullstack development skills to an industry level while building real-world web
               applications using modern technologies. The program emphasizes collaborative teamwork, continuous feedback
               from experienced instructors, and best practices for developing production-ready applications, preparing
               me to work effectively as both a freelancer and a full-time developer.</div>
@@ -723,25 +812,67 @@
       <section id="projects" class="section">
         <div class="section-heading">Projects</div>
 
-        <div class="project-card">
-          <div class="project-thumb">
-            <img src="project_home_page.png" alt="News Center home page"
-              onerror="this.parentElement.style.background='var(--rose-pale)'" />
-          </div>
-          <div>
-            <div class="project-title">News Website <span class="arrow">↗</span></div>
-            <div class="project-desc">A news aggregation platform pulling real-time headlines from multiple sources,
-              with a live dashboard showing current weather, currency exchange rates, and live football scores. Includes
-              dedicated pages for match results, standings, and league stats.</div>
-            <div class="tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">Bootstrap</span>
-              <span class="tag">News API</span>
-              <span class="tag">Sports API</span>
-              <span class="tag">Weather API</span>
+        <div class="projects-carousel" id="projects-carousel">
+          <div class="projects-viewport">
+            <div class="projects-track">
+
+              <a class="project-card" href="https://pharalert-frontend.vercel.app/" target="_blank" rel="noopener">
+                <div class="project-thumb">
+                  <img src="pharalert.png" alt="PharAlert platform preview" loading="lazy" />
+                </div>
+                <div>
+                  <div class="project-title">PharAlert <span class="arrow">↗</span></div>
+                  <div class="project-desc">PharAlert, a SaaS platform bridging the gap between pharmacies,
+                    pharmaceutical companies, and patients. It streamlines pharmacy inventory management through a
+                    cloud-based system, delivers real-time analytics for efficient resupply decisions, and enables
+                    users to quickly find where medications are available—reducing the frustration of shortages and
+                    unnecessary searches.</div>
+                  <div class="tags">
+                    <span class="tag">React</span>
+                    <span class="tag">Tailwind CSS</span>
+                    <span class="tag">Zustand</span>
+                    <span class="tag">Express.js</span>
+                    <span class="tag">PostgreSQL</span>
+                    <span class="tag">Prisma</span>
+                    <span class="tag">JWT</span>
+                    <span class="tag">Zod</span>
+                    <span class="tag">Docker</span>
+                  </div>
+                </div>
+              </a>
+
+              <a class="project-card" href="https://arupyaa.github.io/News-site/" target="_blank" rel="noopener">
+                <div class="project-thumb">
+                  <img src="project_home_page.png" alt="News Center home page" loading="lazy" />
+                </div>
+                <div>
+                  <div class="project-title">News Website <span class="arrow">↗</span></div>
+                  <div class="project-desc">A news aggregation platform pulling real-time headlines from multiple
+                    sources, with a live dashboard showing current weather, currency exchange rates, and live football
+                    scores. Includes dedicated pages for match results, standings, and league stats.</div>
+                  <div class="tags">
+                    <span class="tag">HTML5</span>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">Bootstrap</span>
+                    <span class="tag">News API</span>
+                    <span class="tag">Sports API</span>
+                    <span class="tag">Weather API</span>
+                  </div>
+                </div>
+              </a>
+
             </div>
+          </div>
+
+          <div class="carousel-controls">
+            <button class="carousel-btn" type="button" data-dir="-1" aria-label="Previous project">←</button>
+            <div class="carousel-dots">
+              <button class="carousel-dot active" type="button" data-index="0" aria-label="Go to project 1"
+                aria-current="true"></button>
+              <button class="carousel-dot" type="button" data-index="1" aria-label="Go to project 2"></button>
+            </div>
+            <button class="carousel-btn" type="button" data-dir="1" aria-label="Next project">→</button>
           </div>
         </div>
       </section>
@@ -749,7 +880,7 @@
 
       <section id="contact" class="section">
         <div class="section-heading">Contact</div>
-        <p class="contact-text">I'm actively looking for front-end developer roles — junior positions, internships, or
+        <p class="contact-text">I'm actively looking for fullstack developer roles — junior positions, internships, or
           freelance projects. If you have an opportunity or just want to say hello, my inbox is always open, and I'm
           quick to reply</p>
 
@@ -792,6 +923,79 @@
 
     </main>
   </div>
+
+  <script>
+    (function () {
+      var carousel = document.getElementById('projects-carousel');
+      if (!carousel) return;
+      var track = carousel.querySelector('.projects-track');
+      var slides = carousel.querySelectorAll('.project-card');
+      var dots = carousel.querySelectorAll('.carousel-dot');
+      var current = 0;
+
+      function goTo(index) {
+        current = (index + slides.length) % slides.length;
+        track.style.transform = 'translateX(' + (-current * 100) + '%)';
+        dots.forEach(function (dot, i) {
+          var active = i === current;
+          dot.classList.toggle('active', active);
+          if (active) {
+            dot.setAttribute('aria-current', 'true');
+          } else {
+            dot.removeAttribute('aria-current');
+          }
+        });
+      }
+
+      carousel.querySelectorAll('.carousel-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          goTo(current + Number(btn.dataset.dir));
+        });
+      });
+
+      dots.forEach(function (dot) {
+        dot.addEventListener('click', function () {
+          goTo(Number(dot.dataset.index));
+        });
+      });
+
+      carousel.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          goTo(current - 1);
+        } else if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          goTo(current + 1);
+        }
+      });
+
+      var startX = null;
+      var swiped = false;
+      var viewport = carousel.querySelector('.projects-viewport');
+      viewport.addEventListener('touchstart', function (e) {
+        startX = e.touches[0].clientX;
+        swiped = false;
+      }, { passive: true });
+      viewport.addEventListener('touchend', function (e) {
+        if (startX === null) return;
+        var deltaX = e.changedTouches[0].clientX - startX;
+        startX = null;
+        if (Math.abs(deltaX) > 40) {
+          swiped = true;
+          goTo(current + (deltaX < 0 ? 1 : -1));
+        }
+      }, { passive: true });
+      viewport.addEventListener('click', function (e) {
+        if (swiped) {
+          e.preventDefault();
+          e.stopPropagation();
+          swiped = false;
+        }
+      }, true);
+
+      goTo(0);
+    })();
+  </script>
 
 </body>
 
